@@ -6,6 +6,8 @@ import random
 import string
 
 import aria2p
+import urllib.request
+from zipfile import ZipFile
 import telegram.ext as tg
 from dotenv import load_dotenv
 from pyrogram import Client
