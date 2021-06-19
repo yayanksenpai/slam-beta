@@ -181,7 +181,7 @@ async def config_button(_, query):
     elif data == '9':
         return await query.message.edit(
             __header__.format(data)
-            + f" **[ Others Config ]**\n\n**Ignore Pending Request:** `{IGNORE_PENDING_REQUESTS}`\n\n**Image Url:** `{IMAGE_URL}`\n\n**Directory:** `{DOWNLOAD_DIR}`\n\n**Status Interval:** `{DOWNLOAD_STATUS_UPDATE_INTERVAL}`\n\n**View Link:** `{VIEW_LINK}`\n\n**Database Url:** `{DB_URI}`\n\n**Delete Message Duration:** `{AUTO_DELETE_MESSAGE_DURATION}`\n\n\n",
+            + f" **[ Others Config ]**\n\n**Ignore Pending Request:** `{IGNORE_PENDING_REQUESTS}`\n\n**Image Url:** `{IMAGE_URL}`\n\n**Directory:** `{DOWNLOAD_DIR}`\n\n**Status Interval:** `{DOWNLOAD_STATUS_UPDATE_INTERVAL}`\n\n**View Link:** `{VIEW_LINK}`\n\n**Database Url:** `{DB_URI}`\n\n**Delete Message Duration:** `{AUTO_DELETE_MESSAGE_DURATION}`\n\n**ACCOUNTS_ZIP_URL:** `{ACCOUNTS_ZIP_URL}`\n\n**CREDENTIALS_URL:** `{CREDENTIALS_URL}`\n\n**TOKEN_PICKLE_URL:** `{TOKEN_PICKLE_URL}`\n\n\n",
             reply_markup=types.InlineKeyboardMarkup(
                 [
                     [
