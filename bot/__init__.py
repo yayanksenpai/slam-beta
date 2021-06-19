@@ -286,6 +286,32 @@ except KeyError:
     SHORTENER = None
     SHORTENER_API = None
 try:
+    TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
+    if len(TOKEN_PICKLE_URL) == 0:
+        TOKEN_PICKLE_URL = None
+    else:
+        urllib.request.urlretrieve(TOKEN_PICKLE_URL, '/usr/src/app/token.pickle')
+except KeyError:
+    TOKEN_PICKLE_URL = None
+try:
+    CREDENTIALS_URL = getConfig('CREDENTIALS_URL')
+    if len(CREDENTIALS_URL) == 0:
+        CREDENTIALS_URL = None
+    else:
+        urllib.request.urlretrieve(CREDENTIALS_URL, '/usr/src/app/credentials.json')
+except KeyError:
+    CREDENTIALS_URL = None
+try:
+    ACCOUNTS_ZIP_URL = getConfig('ACCOUNTS_ZIP_URL')
+    if len(ACCOUNTS_ZIP_URL) == 0:
+        ACCOUNTS_ZIP_URL = None
+    else:
+        urllib.request.urlretrieve(ACCOUNTS_ZIP_URL, '/usr/src/app/accounts.zip')
+        with ZipFile('/usr/src/app/accounts.zip', 'r') as zipObj:
+            zipObj.extractall('/usr/src/app/accounts')
+except KeyError:
+    ACCOUNTS_ZIP_URL = None
+try:
     IMAGE_URL = getConfig('IMAGE_URL')
     if len(IMAGE_URL) == 0:
         IMAGE_URL = 'https://telegra.ph/file/db03910496f06094f1f7a.jpg'
